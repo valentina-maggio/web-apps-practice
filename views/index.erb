@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Count</title>
+  </head>
+  <body>
+    <form action="/increment" method="post">
+      <input type="submit" value="Increment">
+    </form>
+    <br>
+    <form action="/decrement" method="post">
+      <input type="submit" value="Decrement">
+    </form>
+    </br>
+    <div id="count">Count: <%= @counter.count %> (Last updated at: <%= Time.now.strftime('%R')  %>)</div>
+        <br>
+    <form action="/reset" method="post">
+      <input type="submit" value="Reset">
+    </form>
+    </br>
+  </body>
+</html>
