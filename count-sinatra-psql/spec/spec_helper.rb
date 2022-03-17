@@ -13,9 +13,14 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-require_relative './setup_test_database'
 
 ENV['ENVIRONMENT'] = 'test'
+
+require_relative './setup_test_database'
+require 'capybara/rspec'
+require_relative '../app'
+
+Capybara.app = CounterApp
 
 RSpec.configure do |config|
   config.before(:each) do
